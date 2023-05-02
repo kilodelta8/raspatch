@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="jumbotron text-center">
+    <h1>Raspatch</h1>
+    <p class="lead">Welcome to my "Raspatch" gardening project
+    </p>
+</div>
+<hr />
+<div class="container">
+    {% if users|length == 0 %}
+        <p>No users yet</p>
+    {% else %}
+        <ul>
+            {% for user in users %}
+            <li><a href="user/{{user.username}}"><strong>{{user.username}}</strong></a></li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</div>
+{% endblock %}
